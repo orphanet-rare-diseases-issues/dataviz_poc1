@@ -4,16 +4,27 @@
     <meta charset="utf-8"/>
     <link href="./css/tabulator_bootstrap4.css" rel="stylesheet"/>
     <link href="./css/main.css" rel="stylesheet"/>
+	<link href="./css/bootstrap.min.css" rel="stylesheet"/> 
     <link rel="icon" href="./media/favicon.ico"/>
 </head>
 <body>
+
+ <div id="image_head">
+  <div></div> <!-- centering place holder -->
+<a href="https://www.orpha.net/consor/cgi-bin/index.php">
+                    <img align=left src="./media/logo_orphanet_transp.png" alt="orphanet" height="43px";></a>
+					<i class="noWrap">tooling example based on API implementation <a href="http://api.orphacode.org/">
+                http://api.orphacode.org/</a></i>
+					<a href="http://www.rd-code.eu/">
+                    <img src="./media/rd_code.png" alt="rd_code" height="60px";></a>
+                </a>
+</div>        
     <div id="headerMenu" class="flexLeft">
         <div class="alignVertical">
-            <i class="noWrap">tooling example based on API implementation <a href="http://api.orphacode.org/">
-                http://api.orphacode.org/</a></i>
+            
             <div class="flexLeft">
                 <div class="mainInputMenu">
-                    <label for="mainInputLang" class="noWrap">Select a language:</label><br>
+                    <label for="mainInputLang" class=font-weight-bold>Select a language:</label><br>
                     <select id="mainInputLang" name="mainInputLang"
                             onchange="suggest(mainInputLang.value, mainInputType.value, mainInput.value)">
                         <option value="CS">CS</option>
@@ -28,7 +39,7 @@
                     </select>
                 </div>
                 <div class="mainInputMenu">
-                    <label for="mainInputType">Select the type of the query:</label><br>
+                    <label class=font-weight-bold for="mainInputType">Select the type of the query:</label><br>
                     <select id="mainInputType" name="mainInputType"
                             onchange="suggest(mainInputLang.value, mainInputType.value, mainInput.value)">
                         <option value="auto" selected>Auto</option>
@@ -42,26 +53,13 @@
                 </div>
             </div>
             <div id="mainInputMenuSearch">
-                <label for="mainInput" class="noWrap">Search by ORPHAcode, disorder name, ICD-10 or OMIM code:</label><br>
+                <label for="mainInput" class=font-weight-bold>Search by ORPHAcode, disorder name, ICD-10 or OMIM code:</label><br>
             <!--    onKeyUp event is registered in suggest.js-->
-                <input type="text" id="mainInput" value="558">
+                <input class="form-control input-lg" type="text" id="mainInput" value="558" background-color=#eee>
             </div>
         </div>
 
-        <div id="image_head">
-            <div></div> <!-- centering place holder -->
-            <div>
-                <a href="https://www.orpha.net/consor/cgi-bin/index.php">
-                    <img src="./media/logo_orphanet_transp.png" alt="orphanet" height="43px";>
-                </a>
-            </div>
-            <div>
-                <a href="http://www.rd-code.eu/">
-                    <img src="./media/rd_code.png" alt="rd_code" height="60px";>
-                </a>
-            </div>
-            <div></div> <!-- centering place holder -->
-        </div>
+        
     </div>
 
     <b class="noWrap">Select a result to obtain hierarchical information below</b>
