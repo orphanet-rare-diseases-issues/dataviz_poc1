@@ -1,0 +1,41 @@
+/* main css (except tabulator) */
+.alignVertical{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flexLeft{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.alignHorizontal{
+  display: flex;
+  justify-content: space-around;
+}
+
+.mainInputMenu {
+  margin: 10px 20px 10px 20px;
+}
+
+.noWrap
+{
+  white-space: nowrap;
+}
+
+#headerMenu {
+  margin: 0px 0px 20px 0px;
+}
+
+#mainInputMenuSearch {
+  margin: 20px 20px 10px 20px;
+}
+
+#image_head
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}

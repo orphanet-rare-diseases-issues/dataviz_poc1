@@ -1,0 +1,34 @@
+#classificationInfo {
+  /*width: 100%;*/
+  height: 1000px;
+  margin: 0px 20px 20px 20px;
+}
+
+#classificationInfo svg {
+  box-sizing: border-box;
+  border: 1px solid;
+}
+
+#classificationInfo .node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.node .selected {
+  stroke: black;
+  stroke-width: 3.0px;
+}
+
+.link {
+  stroke: #999;
+}
+
+/*Some parameters must be changed in classificationGraph.js:
+  graphConf.textLineHeight
+*/
+.nodeText {
+  text-anchor: middle;
+  font-size: 1.2em;
+  fill: black;
+  cursor: default;
+}

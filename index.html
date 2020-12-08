@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+    <title>RDcode data viewer</title>
+    <meta charset="utf-8"/>
+    <link href="./css/tabulator_bootstrap4.css" rel="stylesheet"/>
+    <link href="./css/main.css" rel="stylesheet"/>
+    <link rel="icon" href="./media/favicon.ico"/>
+</head>
+<body>
+    <div id="headerMenu" class="flexLeft">
+        <div class="alignVertical">
+            <i class="noWrap">tooling example based on API implementation <a href="http://api.orphacode.org/">
+                http://api.orphacode.org/</a></i>
+            <div class="flexLeft">
+                <div class="mainInputMenu">
+                    <label for="mainInputLang" class="noWrap">Select a language:</label><br>
+                    <select id="mainInputLang" name="mainInputLang"
+                            onchange="suggest(mainInputLang.value, mainInputType.value, mainInput.value)">
+                        <option value="CS">CS</option>
+                        <option value="DE">DE</option>
+                        <option value="EN" selected>EN</option>
+                        <option value="ES">ES</option>
+                        <option value="FR">FR</option>
+                        <option value="IT">IT</option>
+                        <option value="NL">NL</option>
+                        <option value="PL">PL</option>
+                        <option value="PT">PT</option>
+                    </select>
+                </div>
+                <div class="mainInputMenu">
+                    <label for="mainInputType">Select the type of the query:</label><br>
+                    <select id="mainInputType" name="mainInputType"
+                            onchange="suggest(mainInputLang.value, mainInputType.value, mainInput.value)">
+                        <option value="auto" selected>Auto</option>
+                        <option value="PT">Preferred Term</option>
+                        <option value="S">Synonym</option>
+                        <option value="PTS">Preferred Term and Synonym</option>
+                        <option value="ORPHA">ORPHAcode</option>
+                        <option value="ICD-10">ICD-10 code</option>
+                        <option value="OMIM">OMIM code</option>
+                    </select>
+                </div>
+            </div>
+            <div id="mainInputMenuSearch">
+                <label for="mainInput" class="noWrap">Search by ORPHAcode, disorder name, ICD-10 or OMIM code:</label><br>
+            <!--    onKeyUp event is registered in suggest.js-->
+                <input type="text" id="mainInput" value="558">
+            </div>
+        </div>
+
+        <div id="image_head">
+            <div></div> <!-- centering place holder -->
+            <div>
+                <a href="https://www.orpha.net/consor/cgi-bin/index.php">
+                    <img src="./media/logo_orphanet_transp.png" alt="orphanet" height="43px";>
+                </a>
+            </div>
+            <div>
+                <a href="http://www.rd-code.eu/">
+                    <img src="./media/rd_code.png" alt="rd_code" height="60px";>
+                </a>
+            </div>
+            <div></div> <!-- centering place holder -->
+        </div>
+    </div>
+
+    <b class="noWrap">Select a result to obtain hierarchical information below</b>
+    <!-- Show a list of results for each disorder matching the query -->
+    <div id="suggestDisplay">
+    </div>
+
+    <br>
+
+    <!-- More information about the clicked disorder -->
+    <div id="disorderInfo">
+    </div>
+
+    <br>
+
+    <!-- explore the classification of the clicked disorder -->
+    <div id="classificationInfo">
+        <b><i>Use "right-click" to obtain more options</i></b>
+        <svg />
+    </div>
+
+    <br>
+
+    <!-- Core scripts -->
+    <script src="./lib/jquery.min.js" type="text/javascript"></script>
+    <script src="./lib/tabulator.min.js" type="text/javascript"></script>
+    <script src="./lib/config.js" type="text/javascript"></script>
+    <script src="./lib/queryApi.js" type="text/javascript"></script>
+    <script src="./lib/suggest.js" type="text/javascript"></script>
+    <script src="./lib/tabulatorInstance.js" type="text/javascript"></script>
+    <script src="./lib/lodash.js" type="text/javascript"></script>
+    <script src="./lib/rdcodeDataVizMain.js" type="text/javascript"></script>
+
+    <!-- Classification part -->
+    <link rel='stylesheet' href='./css/d3-context-menu.css'>
+    <link rel='stylesheet' href='./css/classificationGraph.css'>
+
+    <script src="./lib/classification/d3.v4.js" type="text/javascript"></script>
+    <script src="./lib/classification/d3v4-brush-lite.js" type="text/javascript"></script>
+    <script src="./lib/classification/d3-context-menu.js" type="text/javascript"></script>
+    <script src="./lib/classification/d3v4ForceGraph.js" type="text/javascript"></script>
+    <script src="./lib/classification/classificationGraph.js" type="text/javascript"></script>
+</body>
